@@ -1,17 +1,20 @@
 package heyits.red.Scoreboard.rr.board.slimboard;
 
-import me.clip.placeholderapi.PlaceholderAPI;
-import org.bukkit.Bukkit;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.scoreboard.*;
-import heyits.red.Scoreboard.rr.Main;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team;
+
 import heyits.red.Scoreboard.rr.Session;
 import heyits.red.Scoreboard.rr.board.App;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+import me.clip.placeholderapi.PlaceholderAPI;
+import be.maximvdw.placeholderapi.*;
 
 public class Slimboard {
 
@@ -65,6 +68,9 @@ public class Slimboard {
             PlaceholderAPI.containsPlaceholders(string)) {
             string = PlaceholderAPI.setPlaceholders(player, string); // Run placeholders!
          }
+         if(Session.enabled_dependencies.contains(Session.dependencies[0]) && org.bukkit.Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
+                 string = be.maximvdw.placeholderapi.PlaceholderAPI.replacePlaceholders(player, string); // Run MVdW placeholders!
+              }
 
         if(cache.containsKey(-1) && cache.get(-1) == string) return; // Is it in cache?
         if(cache.containsKey(-1)) cache.remove(-1); // Remove it from cache, it is different!
