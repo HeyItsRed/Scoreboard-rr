@@ -21,6 +21,8 @@ public class Session {
 
     // Bools
     public static boolean isuptodate = false;
+    
+    public static String currentversion = "0";
 
     // Blocked users
     public static ArrayList<Player> disabled_players = new ArrayList<>();
@@ -43,8 +45,10 @@ public class Session {
                     con.getInputStream())).readLine();
             if (version.equalsIgnoreCase(plugin.getDescription().getVersion())) {
                 isuptodate =  true;
+                currentversion = plugin.getDescription().getVersion();
             } else {
                 isuptodate =  false;
+                currentversion = plugin.getDescription().getVersion();
             }
             if (App.updates == false) { //If updates are set as false set plugin as up to date
             	isuptodate = true;
@@ -52,6 +56,7 @@ public class Session {
         } catch (Exception ex) {
             ex.printStackTrace();
             isuptodate =  false;
+            currentversion = plugin.getDescription().getVersion();
         }
     }
 

@@ -1,6 +1,6 @@
 name: Scoreboard-ReRevision
 author: HeyItsRed
-version: 1.0.3
+version: 1.0.4
 main: heyits.red.Scoreboard.rr.Main
 description: Lightweight nonflickering scoreboard revision
 softdepend: [PlaceholderAPI]

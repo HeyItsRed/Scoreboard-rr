@@ -1,8 +1,15 @@
 package heyits.red.Scoreboard.rr.board.events;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+
+import heyits.red.Scoreboard.rr.Main;
 import heyits.red.Scoreboard.rr.Session;
 import heyits.red.Scoreboard.rr.board.App;
 import heyits.red.Scoreboard.rr.board.ScoreboardHolder;
@@ -23,8 +30,21 @@ public class EIntergrate implements Listener {
 
         if(app == null || !app.isdefault) return;
         if(e.getPlayer().isOp() && !Session.isuptodate)
-            e.getPlayer().sendMessage(Func.color("&cYou are running an outdated version of Scoreboard, please update as soon as possible for performance gain, security- or bugfixes."));
-        new ScoreboardHolder(app, e.getPlayer());
+        	try {
+        	URL url = new URL("https://raw.githubusercontent.com/HeyItsRed/Scoreboard-rr/master/Version.txt");
+    	HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    	con.setRequestMethod("GET");
+    	con.setRequestProperty("Content-Type", "application/json");
+    	con.setConnectTimeout(5000);
+    	con.setReadTimeout(5000);
+
+        String version = new BufferedReader(new InputStreamReader(
+                con.getInputStream())).readLine();
+            e.getPlayer().sendMessage(Func.color("&cYou are running an outdated version of Scoreboard\n&aCurrent Version:&f " + Session.currentversion + ", &bLatest Version:&f " + version + " \n&cPlease update as soon as possible for performance gain, security- or bugfixes."));
+            new ScoreboardHolder(app, e.getPlayer());
+        	} catch (Exception ex) {
+                ex.printStackTrace();
+            }
     }
 
 }
