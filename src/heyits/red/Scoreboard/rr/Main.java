@@ -27,7 +27,7 @@ public class Main extends JavaPlugin {
     private void init()
     {
         Session.plugin = this;
-        Session.isUpToDate("14754");
+        Session.isUpToDate();
         ConfigControl.get().createDataFiles();
         empty = getServer().getScoreboardManager().getNewScoreboard();
 
@@ -106,7 +106,9 @@ public class Main extends JavaPlugin {
     {
         System.out.println("Scoreboard is online! Scoreboard version: " + Session.plugin.getDescription().getVersion() +
         " (" + (Session.isuptodate ? "UP TO DATE" : "OUTDATED") + ")");
-
+        if (App.updates == false) {
+        	System.out.println("Scoreboard ReRevision Updates are disabled! Scoreboard will show as up to date even if it isnt.");
+        }
         System.out.println();
     }
 

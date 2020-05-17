@@ -19,6 +19,7 @@ public class App extends BukkitRunnable {
     private ArrayList<Player> children = new ArrayList<>();
     public ArrayList<ScoreboardHolder> holders = new ArrayList<>();
     public static boolean longline = false;
+    public static boolean updates = true;
     public String board;
     public boolean isdefault = true;
 
@@ -30,6 +31,7 @@ public class App extends BukkitRunnable {
     {
         // conf
         App.longline = ConfigControl.get().gc("settings").getBoolean("settings.longline"); // Are we in longline?
+        App.updates = ConfigControl.get().gc("settings").getBoolean("settings.updates");
         this.board = board; // What is the current board?
 
         //Events

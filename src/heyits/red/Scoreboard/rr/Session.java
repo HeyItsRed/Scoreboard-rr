@@ -1,6 +1,7 @@
 package heyits.red.Scoreboard.rr;
 
 import org.bukkit.entity.Player;
+import heyits.red.Scoreboard.rr.board.App;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,7 +13,7 @@ public class Session {
 
     // Dependencies
     // PlaceholderAPI = dependency ID 0
-    public static String[] dependencies = {"PlaceholderAPI"};
+    public static String[] dependencies = {"PlaceholderAPI","MVdWPlaceholderAPI"};
     public static ArrayList<String> enabled_dependencies = new ArrayList<>();
 
     // Objects
@@ -29,7 +30,7 @@ public class Session {
      * Are we up to date?
      * @param resourceId
      */
-    public static void isUpToDate(String resourceId) {
+    public static void isUpToDate() {
         try {
         	URL url = new URL("https://raw.githubusercontent.com/HeyItsRed/Scoreboard-rr/master/Version.txt");
         	HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -44,6 +45,9 @@ public class Session {
                 isuptodate =  true;
             } else {
                 isuptodate =  false;
+            }
+            if (App.updates == false) { //If updates are set as false set plugin as up to date
+            	isuptodate = true;
             }
         } catch (Exception ex) {
             ex.printStackTrace();

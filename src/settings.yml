@@ -15,6 +15,7 @@ settings:
   # false: you can use 32 characters per line (1.12 and down)
   longline: true
 
+  updates: true #If you would like to disable update notifications set this as false
 # In what worlds should we disable scoreboard?
 disabled-worlds:
   - 'non_existant_world'
