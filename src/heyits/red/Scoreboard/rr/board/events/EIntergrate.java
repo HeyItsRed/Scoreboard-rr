@@ -41,10 +41,10 @@ public class EIntergrate implements Listener {
         String version = new BufferedReader(new InputStreamReader(
                 con.getInputStream())).readLine();
             e.getPlayer().sendMessage(Func.color("&cYou are running an outdated version of Scoreboard\n&aCurrent Version:&f " + Session.currentversion + ", &bLatest Version:&f " + version + " \n&cPlease update as soon as possible for performance gain, security- or bugfixes."));
-            new ScoreboardHolder(app, e.getPlayer());
         	} catch (Exception ex) {
                 ex.printStackTrace();
             }
+        new ScoreboardHolder(app, e.getPlayer());
     }
 
 }
