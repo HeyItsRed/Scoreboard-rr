@@ -1,10 +1,9 @@
 name: Scoreboard-ReRevision
 author: HeyItsRed
-version: 1.0.4
+version: 1.0.5
 main: heyits.red.Scoreboard.rr.Main
 description: Lightweight nonflickering scoreboard revision
-softdepend: [PlaceholderAPI]
-softdepend: [MVdWPlaceholderAPI]
+softdepend: [PlaceholderAPI, MVdWPlaceholderAPI]
 commands:
   sb:
     description: Scoreboard main command

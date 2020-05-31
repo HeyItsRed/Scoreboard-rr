@@ -68,7 +68,7 @@ public class Slimboard {
             PlaceholderAPI.containsPlaceholders(string)) {
             string = PlaceholderAPI.setPlaceholders(player, string); // Run placeholders!
          }
-         if(Session.enabled_dependencies.contains(Session.dependencies[0]) && org.bukkit.Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
+         if(Session.enabled_dependencies.contains(Session.dependencies[1]) && org.bukkit.Bukkit.getPluginManager().isPluginEnabled("MVdWPlaceholderAPI")) {
                  string = be.maximvdw.placeholderapi.PlaceholderAPI.replacePlaceholders(player, string); // Run MVdW placeholders!
               }
 
