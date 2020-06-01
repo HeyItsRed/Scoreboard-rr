@@ -47,6 +47,13 @@ public class ScoreboardHolder {
                 this.player.setScoreboard(Main.empty);
             disabled = true;
             return;
+        }else if(Session.sb_off_players.contains(this.player)) {
+        	 this.player.setScoreboard(Main.empty);
+             disabled = true;
+             return;
+        } else if(!Session.sb_off_players.contains(this.player)){
+        	disabled = false;
+            this.player.setScoreboard(this.slim.board);
         } else if(Session.re_enable_players.contains(this.player)) {
             disabled = false;
             this.player.setScoreboard(this.slim.board);

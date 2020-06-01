@@ -35,6 +35,14 @@ public class CommandManager implements CommandExecutor {
                         Main.loadBoards();
                         Func.smsg(player, "Scoreboard reloaded");
                     }
+                } else if(args[0].equalsIgnoreCase("toggle")) {
+                        if(!Session.sb_off_players.contains(player)) {
+                            Session.sb_off_players.add(player);
+                            player.setScoreboard(Main.empty);
+                    } else {
+                        Session.sb_off_players.remove(player);
+                    }
+                        Func.smsg(player, "Scoreboard toggled");
                 }  else {
                     Func.msg(player,"Unknown command!");
                     help(player);
@@ -48,5 +56,6 @@ public class CommandManager implements CommandExecutor {
     private void help(Player player)
     {
         Func.smsg(player, "/sb reload (Reload config and application)");
+        Func.smsg(player, "/sb toggle (Toggle your scoreboard on or off)");
     }
 }

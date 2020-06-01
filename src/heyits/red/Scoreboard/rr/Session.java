@@ -27,6 +27,7 @@ public class Session {
     // Blocked users
     public static ArrayList<Player> disabled_players = new ArrayList<>();
     public static ArrayList<Player> re_enable_players = new ArrayList<>();
+    public static ArrayList<Player> sb_off_players = new ArrayList<>();
 
     /**
      * Are we up to date?
