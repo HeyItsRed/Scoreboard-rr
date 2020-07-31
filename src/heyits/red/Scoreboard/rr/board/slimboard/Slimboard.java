@@ -48,7 +48,7 @@ public class Slimboard {
             Team t = this.board.registerNewTeam(i + ""); // Create the first team
             t.addEntry(ChatColor.values()[i] + ""); // Assign the team with a color
 
-            this.objective.getScore(ChatColor.values()[i] + "").setScore(score); // Set the socre number
+            this.objective.getScore(ChatColor.values()[i] + "").setScore(score); // Set the score number
 
             score--; // Lower the score number for the next line
         }
@@ -97,7 +97,7 @@ public class Slimboard {
         if(App.longline) parts = convertIntoPieces(string, 64); else parts = convertIntoPieces(string, 16); // Convert it into pieces!
 
         t.setPrefix(fixAnyIssues(parts.get(0))); // Set the first
-        t.setSuffix(fixAnyIssues(parts.get(1))); // Set the scond
+        t.setSuffix(fixAnyIssues(parts.get(1))); // Set the second
     }
 
 
