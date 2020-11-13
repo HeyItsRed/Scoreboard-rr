@@ -6,7 +6,7 @@
 
     <groupId>hey.its.red</groupId>
     <artifactId>Scoreboard-rr</artifactId>
-    <version>1.0.9</version>
+    <version>1.1.0</version>
     <repositories>
         <repository>
             <id>papermc</id>
@@ -25,7 +25,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>hey.its.red.Main</mainClass>
+                            <mainClass>Scoreboard.rr.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

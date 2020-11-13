@@ -29,10 +29,6 @@ public class Session {
     public static ArrayList<Player> re_enable_players = new ArrayList<>();
     public static ArrayList<Player> sb_off_players = new ArrayList<>();
 
-    /**
-     * Are we up to date?
-     * @param resourceId
-     */
     public static void isUpToDate() {
         try {
         	URL url = new URL("https://raw.githubusercontent.com/HeyItsRed/Scoreboard-rr/master/Version.txt");
