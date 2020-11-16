@@ -124,7 +124,7 @@ public class Slimboard {
     {
         ArrayList<String> parts = null;
         if(App.longline) parts = convertIntoPieces(color, 64); else parts = convertIntoPieces(color, 15);
-            return parts.get(0) + "§f" +  getLastColor(parts.get(0)) + parts.get(1);
+            return parts.get(0) + getLastColor(parts.get(0)) + parts.get(1);
     }
 
     private String prepForShortline(String color)
@@ -132,7 +132,7 @@ public class Slimboard {
         if(color.length() > 16)
         {
             ArrayList<String> pieces = convertIntoPieces(color, 16);
-            return pieces.get(0) + "§f"  + getLastColor(pieces.get(0)) + pieces.get(1);
+            return pieces.get(0) + getLastColor(pieces.get(0)) + pieces.get(1);
         }
         return color;
     }
